@@ -7,9 +7,11 @@ serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serveur.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 serveur.bind((HOTE,PORT))
 serveur.listen()
+
 print(f"waiting for a client on the port {PORT}")
 
 conn, adresse = serveur.accept()
+
 print("Client connected : ", adresse)
 
 while True:
